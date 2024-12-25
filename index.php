@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>Menu</title>
+    <title>Menus</title>
     <link rel="stylesheet" type="text/css" href="style0.css">
 
 </head>
