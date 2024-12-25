@@ -1,11 +1,13 @@
-# Utilisation d'une image de base PHP
+# Utiliser une image PHP avec Apache comme base
 FROM php:7.4-apache
 
-# Installation des extensions nécessaires pour PHP
-RUN docker-php-ext-install pdo pdo_pgsql
+# Installer les dépendances nécessaires
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql
 
-# Copie du code de l'application dans le conteneur
+# Copier les fichiers de l'application dans le conteneur
 COPY . /var/www/html/
 
-# Exposition du port 80 pour accéder à l'application
+# Exposer le port 80 pour accéder au site
 EXPOSE 80
